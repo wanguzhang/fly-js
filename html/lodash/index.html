@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
+    <title>测试 lodash 防抖节流函数</title>
+    <style>
+        .throttle {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .debounce {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="throttle">
+        _.throttle
+    </div>
+    <div class="debounce" id='debounce'>
+        _.debounce
+    </div>
+    <div class="debounce" id="demo">
+        正常
+    </div>
+</body>
+<script src="./lodash.min.js"></script>
+<script>
+    function randomHexColor() { //随机生成十六进制颜色
+        var hex = Math.floor(Math.random() * 16777216).toString(16); //生成ffffff以内16进制数
+        while (hex.length < 6) { //while循环判断hex位数，少于6位前面加0凑够6位
+            hex = '0' + hex;
+        }
+        return '#' + hex; //返回‘#'开头16进制颜色
+    }
+    document.getElementsByClassName('throttle')[0].onclick =
+        _.throttle((event) => {
+            console.log('三秒触发一次', event);
+        }, 3000, { 'trailing': true, leading: false });
+    const debounceFunc = _.debounce((event) => {
+        event.target.style.backgroundColor = randomHexColor();
+    }, 3000, { 'trailing': false, leading: true, });
+    document.getElementById('debounce').onmousemove = debounceFunc;
+    document.getElementById('debounce').onmouseout = debounceFunc.cancel;
+
+    document.getElementById('demo').onmousemove = (event) => {
+        event.target.style.backgroundColor = randomHexColor();
+    }
+</script>
+
+</html>

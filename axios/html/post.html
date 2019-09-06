@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Axios-POST Demo</title>
+</head>
+
+<body>
+    <button id="demo1">保存单个用户-params：/axios/users-params</button>
+    <button id="demo2">保存单个用户-body：/axios/users-body</button>
+    <input id="file" type="file" name="file">
+    <button id="demo3">测试 form-data</button>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/BaseAxios.js"></script>
+    <script>
+        var axios = new BaseAxios(axios.create());
+        console.log(axios);
+        const url = '';
+        axios.defaults.baseURL = "http://localhost:8080";
+        var file;
+        document.querySelector("input[name=file]").onchange = function (e) {
+            file = e.currentTarget.files[0];
+            console.log(file);
+        };
+        document.getElementById("demo3").onclick = function () {
+            let formData = new FormData();
+            formData.set("age", 11);
+            formData.set("name", 22);
+            formData.set("file", file);
+            axios.post(url + '/axios/users-form-data', formData
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo1").onclick = function () {
+            axios.post(url + '/axios/users-params', null,
+                {
+                    params: {
+                        id: 111,
+                        name: "张攀钦",
+                        age: 18
+                    },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+
+                }
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo2").onclick = function () {
+            axios.post(url + '/axios/users-body',
+                {
+                    id: 111,
+                    name: "张攀钦",
+                    age: 18
+                }
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

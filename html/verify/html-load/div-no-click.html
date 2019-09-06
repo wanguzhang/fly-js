@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
+    <title>div 不能点击</title>
+    <style>
+        #div {
+            background-color: yellow;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">div 不能点击</div>
+</body>
+<script>
+    document.getElementById('div').onclick = (event) => {
+        document.getElementById('div').style.backgroundColor = 'red';
+    }
+</script>
+
+</html>

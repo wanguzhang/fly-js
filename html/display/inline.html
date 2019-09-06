@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
+    <title>list-item</title>
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+        /* 通过设置父元素 font-size 0px,规避换行留白 */
+        .container {
+            font-size: 0px;
+        }
+
+
+        .item {
+            font-size: 12px;
+            display: inline;
+            list-style-position: inside;
+            background-color: red;
+            letter-spacing: normal;
+            /* 设置字母、字间距为0 */
+            word-spacing: normal;
+            /* 设置单词、字段间距为0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1111</div>
+        <div class="item">1111</div>
+    </div>
+</body>
+
+</html>

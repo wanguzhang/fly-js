@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Axios-PUT Demo</title>
+</head>
+
+<body>
+    <button id="demo1">PUT-更新单个用户-params：/axios/users-params</button>
+    <button id="demo2">PUT-更新单个用户-body：/axios/users-params</button>
+    <button id="demo3">PUT-更新单个用户-form-data：/axios/users-form-data</button>
+    <input id="file" type="file" name="file">
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/BaseAxios.js"></script>
+    <script>
+        var axios = new BaseAxios(axios.create());
+        console.log(axios);
+        const url = '';
+        axios.defaults.baseURL = "http://localhost:8080";
+        var file;
+        document.querySelector("input[name=file]").onchange = function (e) {
+            file = e.currentTarget.files[0];
+            console.log(file);
+        };
+        document.getElementById("demo3").onclick = function () {
+            let formData = new FormData();
+            formData.set("age", 11);
+            formData.set("name", 22);
+            if (document.getElementById('file').files[0]) {
+
+                formData.set("file", document.getElementById('file').files[0]);
+            }
+            axios.put(url + '/axios/users-form-data', formData
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo1").onclick = function () {
+            axios.put(url + '/axios/users-params', null,
+                {
+                    params: {
+                        id: 111,
+                        name: "张攀钦",
+                        age: 18
+                    },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+
+                }
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo2").onclick = function () {
+            axios.put(url + '/axios/users-body',
+                {
+                    id: 111,
+                    name: "张攀钦",
+                    age: 18
+                }
+            ).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

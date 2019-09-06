@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Axios-GET Demo</title>
+</head>
+
+<body>
+    <button id="demo1">delete-删除单个用户：/axios/users/{id}</button>
+    <button id="demo2">delete-params-删除批量用户：/axios/users</button>
+    <button id="demo3">delete-body-删除批量用户：/axios/users</button>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/BaseAxios.js"></script>
+    <script>
+        var axios = new BaseAxios(axios.create());
+        console.log(axios);
+        const url = '';
+        axios.defaults.baseURL = "http://localhost:8080";
+        document.getElementById("demo1").onclick = function () {
+            axios.delete(url + '/axios/users/1').then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo2").onclick = function () {
+            axios.delete(url + '/axios/users', {
+                params: {
+                    id: 111,
+                    name: "张攀钦",
+                    age: 18
+                }
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo3").onclick = function () {
+            axios.delete(url + '/axios/users-body', null, {
+                data: {
+                    id: 111,
+                    name: "张攀钦",
+                    age: 18
+                }
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

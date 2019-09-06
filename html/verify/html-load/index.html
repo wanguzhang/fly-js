@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>css阻塞</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<!-- DOMContentLoaded 在defer js 执行完之后触发 ,async js 不会等待 ；defer 和 async 不会阻塞 Dom 解析；加载 css 也不会阻塞 Dom 解析-->
+
+<!--
+444444
+DOMContentLoaded
+333333333333
+-->
+
+<body>
+    <script src="./js1.js" async></script>
+
+
+    <div id="ele">111</div>
+
+    <script src="./js2.js" async></script>
+
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+
+    <script src="./js3.js" async></script>
+    <div>222</div>
+    <style>
+        div {
+            background-color: red;
+        }
+    </style>
+    <script src="./js4.js" defer></script>
+
+</body>
+
+</html>

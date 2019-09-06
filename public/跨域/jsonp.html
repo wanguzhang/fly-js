@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
+    <title>jsonp 跨域</title>
+</head>
+
+<body>
+    <div>jsonp:<span id="jsonp"></span></div>
+    <div>cors:<span id="cors"></span></div>
+    <script src="../vendor/jquery-3.4.1.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'http://192.168.202.216:8888/web/demo2',
+            type: "GET",
+            dataType: 'jsonp',
+            error(error) {
+                console.log(error);
+            },
+            success: data => {
+                document.getElementById("jsonp").innerHTML = JSON.stringify(data);
+            }
+        });
+        $.ajax({
+            url: 'http://192.168.202.216:8888/web/demo3',
+            dataType: 'json',
+            type: "GET",
+            error(error) {
+                console.log(error);
+            },
+            success: data => {
+                document.getElementById("cors").innerHTML = JSON.stringify(data);
+            }
+        });
+    </script>
+</body>
+
+</html>

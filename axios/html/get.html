@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Axios-GET Demo</title>
+</head>
+
+<body>
+    <button id="demo1">查询单个用户：/axios/users/{id}</button>
+    <button id="demo3">查询单个用户axios.request：/axios/users/{id}</button>
+    <button id="demo2">查询批量用户：/axios/users?id&name&age</button>
+    <button id="demo4">下载文件：/axios/users?id&name&age</button>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/BaseAxios.js"></script>
+    <script>
+        var axios = new BaseAxios(axios.create());
+        console.log(axios);
+        const url = '';
+        axios.defaults.baseURL = "http://localhost:8080";
+        document.getElementById("demo4").onclick = function () {
+            axios.get(url + '/axios/download', {
+                responseType: 'blob'
+            }).then(function (response) {
+                console.log(response);
+                let url = window.URL.createObjectURL(new Blob([response.data]))
+                let link = document.createElement('a')
+                link.style.display = 'none'
+                link.href = url
+                link.setAttribute('download', 'config.js');
+
+                document.body.appendChild(link);
+                link.click();
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo1").onclick = function () {
+            axios.get(url + '/axios/users/1').then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo3").onclick = function () {
+            axios.request({
+                url: url + '/axios/users/1',
+                method: 'get'
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        document.getElementById("demo2").onclick = function () {
+            axios.get(url + '/axios/users', {
+                params: {
+                    id: 111,
+                    name: "张攀钦",
+                    age: 18
+                }
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+
+</html>
