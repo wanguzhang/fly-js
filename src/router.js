@@ -6,9 +6,10 @@ import Render from './views/Render.vue';
 import Class from './views/Class.vue';
 import Form from './views/Form.vue';
 import Test from './views/Test.vue';
-import Scene from './views/Scene.vue';
-import Map from './views/Map.vue';
 import Slot from './views/Slot.vue';
+import Mixins from './views/Mixins.vue';
+import RouterView from './views/Router.vue';
+import RouterForm from './views/RouterForm.vue';
 import Dynamic from './views/Dynamic.vue';
 import Component from './views/Component.vue';
 // progress bar style
@@ -18,6 +19,21 @@ const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
+        {
+            path: '/router',
+            name: 'router',
+            component: RouterView,
+            children: [{
+                path: 'form/:id',
+                name: 'routerForm',
+                component: RouterForm,
+            }],
+        },
+        {
+            path: '/mixins',
+            name: 'mixins',
+            component: Mixins,
+        },
         {
             path: '/dynamic',
             name: 'dynamic',

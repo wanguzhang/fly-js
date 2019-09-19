@@ -7,10 +7,10 @@
             <a href="/demo/form" target="_blank">Form 表单相关</a>
             <a href="/demo/component" target="_blank">组件相关</a>
             <a href="/test" target="_blank">单元测试</a>
-            <a href="/scene" target="_blank">Thingjs</a>
-            <a href="/map" target="_blank">citybuilder</a>
             <a href="/slot" target="_blank">Slot</a>
             <a href="/dynamic" target="_blank">动态组件</a>
+            <a href="/mixins" target="_blank">测试混入</a>
+            <a href="/router" target="_blank">vue router</a>
         </div>
     </div>
 </template>
