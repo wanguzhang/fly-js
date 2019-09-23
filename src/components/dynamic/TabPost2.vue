@@ -1,5 +1,5 @@
 <template>
-    <div>Archive-{{message}}</div>
+    <div>Posts2-{{message}}</div>
 </template>
 <script>
 export default {
