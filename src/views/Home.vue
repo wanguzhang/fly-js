@@ -10,7 +10,7 @@
             <a href="/slot" target="_blank">Slot</a>
             <a href="/dynamic" target="_blank">动态组件</a>
             <a href="/mixins" target="_blank">测试混入</a>
-            <a href="/router" target="_blank">vue router</a>
+            <a href="/router/1" target="_blank">vue router</a>
         </div>
     </div>
 </template>

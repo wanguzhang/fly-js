@@ -1,12 +1,16 @@
 <template>
     <div>
         <span class="count">{{ text }}</span>
+        <AxiosTest :obj="obj"></AxiosTest>
     </div>
 </template>
 <script>
+import AxiosTest from '@/components/AxiosTest.vue';
+
 export default {
+    components: { AxiosTest },
     data() {
-        return { text: '默认' };
+        return { text: '默认', obj: null };
     },
     created() {
     // 创建一个大的字符串用于验证内存占用
@@ -15,6 +19,13 @@ export default {
         });
     },
     mounted() {
+        this.$axios
+            .get(
+                'https://www.thingjs.com/uinoUser/thingjs/user/userMsgCount?userId=12614',
+            )
+            .then((data) => {
+                this.obj = data;
+            });
         setTimeout(() => {
             const text = Array(1000000)
                 .fill('xxx')

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import axios from 'axios';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -10,6 +11,7 @@ import './plugins/layer';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
+Vue.prototype.$axios = axios;
 window.$eventBus = new Vue();
 const data = { name: 'main.name' };
 window.vm = new Vue({

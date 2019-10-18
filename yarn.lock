@@ -3521,6 +3521,13 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+echarts@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npm.taobao.org/echarts/download/echarts-4.3.0.tgz#3728c2b5e8f277898f7299b4fe1cfc537170abd5"
+  integrity sha1-NyjCtejyd4mPcpm0/hz8U3Fwq9U=
+  dependencies:
+    zrender "4.1.0"
+
 editorconfig@^0.15.3:
   version "0.15.3"
   resolved "https://registry.npm.taobao.org/editorconfig/download/editorconfig-0.15.3.tgz#bef84c4e75fb8dcb0ce5cee8efd51c15999befc5"
@@ -5333,6 +5340,11 @@ inquirer@^6.2.1, inquirer@^6.2.2:
     string-width "^2.1.0"
     strip-ansi "^5.1.0"
     through "^2.3.6"
+
+install@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.npm.taobao.org/install/download/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+  integrity sha1-avbp2p3QmH3iq0IPeOYNnBcmB3Y=
 
 internal-ip@^4.3.0:
   version "4.3.0"
@@ -11592,3 +11604,8 @@ yup@^0.27.0:
     property-expr "^1.5.0"
     synchronous-promise "^2.0.6"
     toposort "^2.0.2"
+
+zrender@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/zrender/download/zrender-4.1.0.tgz#866ab97d0744c473d9b314ac5a89e7207c140608"
+  integrity sha1-hmq5fQdExHPZsxSsWonnIHwUBgg=

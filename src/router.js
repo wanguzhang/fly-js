@@ -12,6 +12,7 @@ import RouterView from './views/Router.vue';
 import RouterForm from './views/RouterForm.vue';
 import Dynamic from './views/Dynamic.vue';
 import Component from './views/Component.vue';
+import Echarts from './views/Echarts.vue';
 // progress bar style
 NProgress.configure({ showSpinner: true });
 Vue.use(Router);
@@ -20,13 +21,18 @@ const router = new Router({
     base: process.env.BASE_URL,
     routes: [
         {
-            path: '/router',
+            path: '/echarts',
+            name: 'echarts',
+            component: Echarts,
+        },
+        {
+            path: '/router/:id',
             name: 'router',
             component: RouterView,
             children: [{
-                path: 'form/:id',
+                path: 'form/:name',
                 name: 'routerForm',
-                component: RouterForm,
+                components: { default: RouterForm },
             }],
         },
         {
