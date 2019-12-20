@@ -1,5 +1,3 @@
-import { MessageBox } from 'element-ui';
-
 class Video extends THING.Thing {
     constructor(app = uino.app) {
         // 不传 app 报错。
@@ -9,11 +7,8 @@ class Video extends THING.Thing {
 
     // 调用创建对象需要绑定的事件之类的数据
     mYInit() {
-        this.on('click', (ev) => {
-            console.log('Video.click', ev);
-            MessageBox.alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
-                dangerouslyUseHTMLString: false,
-            });
+        this.on('click', () => {
+
         });
     }
 

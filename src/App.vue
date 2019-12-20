@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="less">
 #app {
     font-family:
         "Helvetica Neue",
@@ -18,8 +18,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-// 修改 NProgress的颜色
-#nprogress .bar {
-    background: red !important; //自定义颜色
+
+#nprogress .bar{
+  background: red !important;
 }
 </style>

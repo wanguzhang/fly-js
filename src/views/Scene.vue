@@ -30,3 +30,9 @@ export default {
     },
 };
 </script>
+
+<style>
+#div3D {
+    color: red;
+}
+</style>

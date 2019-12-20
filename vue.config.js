@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const path = require('path');
 
 function resolve(dir) {
@@ -12,8 +13,7 @@ module.exports = {
     pluginOptions: {
         lintStyleOnBuild: true,
         stylelint: {
-            fix: true, // boolean (default: true)
-            // files: '', // string | [string] (default: ['src/**/*.{vue,htm,html,css,sss,less,scss}'])
+            fix: true,
         },
     },
     chainWebpack: (config) => {

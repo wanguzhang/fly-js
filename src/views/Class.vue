@@ -24,14 +24,13 @@ export default {
 };
 </script>
 <style>
-button {
-    padding: 2px 2px;
-    border: none;
-
-    /* margin: 2px 2px; */
-    margin-bottom: 2px;
-    background-color: red;
-    text-decoration: none;
+button{
+  text-decoration: none;
+  background-color: red;
+  padding: 2px 2px;
+  /* margin: 2px 2px; */
+  margin-bottom: 2px;
+  border: none;
 }
 
 .active {
@@ -39,8 +38,7 @@ button {
     color: #fff;
     background-color: black;
 }
-
 .active:hover {
-    background-color: red;
+  background-color: red;
 }
 </style>

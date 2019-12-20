@@ -1,60 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X - UA - Compatible " content="ie = edge " />
+        <!-- <link type="text/css" rel="stylesheet" href="" />-->
+        <!-- <link rel="icon" type="image/jpeg" href="">-->
+        <title>grid 布局</title>
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 50px);
+                grid-template-rows: repeat(3, 50px);
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                grid-template-areas: "a b c" "d e f" "g h i";
+                grid-auto-rows: 100px;
+                grid-auto-columns: 200px;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
-    <!-- <link type="text/css" rel="stylesheet" href="" />-->
-    <!-- <link rel="icon" type="image/jpeg" href="">-->
-    <title>grid 布局</title>
-    <style>
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 50px);
-            grid-template-rows: repeat(3, 50px);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            grid-template-areas: "a b c""d e f""g h i";
-            grid-auto-rows: 100px;
-            grid-auto-columns: 200px;
-        }
+            .item {
+                background-color: red;
+            }
 
-        .item {
-            background-color: red;
-        }
+            .item-1 {
+                grid-area: d;
+                background-color: aqua;
+            }
 
-        .item-1 {
-            grid-area: d;
-            background-color: aqua;
-        }
+            .item-2 {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-end: 3;
+                grid-column-start: 1;
+            }
 
-        .item-2 {
-            grid-row-start: 1;
-            grid-row-end: 2;
-            grid-column-end: 3;
-            grid-column-start: 1;
-        }
+            .item-3 {
+                grid-row: span 2;
+                grid-column: span 1;
+            }
+        </style>
+    </head>
 
-        .item-3 {
-            grid-row: span 2;
-            grid-column: span 1;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="item item-1">1</div>
-        <div class="item item-2">2</div>
-        <div class="item item-3">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-    </div>
-</body>
-
+    <body>
+        <div class="container">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+        </div>
+    </body>
 </html>
