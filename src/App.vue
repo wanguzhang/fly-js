@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<style lang="less">
+<style >
 #app {
     font-family:
         "Helvetica Neue",
@@ -19,7 +19,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-#nprogress .bar{
-  background: red !important;
+#nprogress .bar {
+    background: red !important;
 }
 </style>
